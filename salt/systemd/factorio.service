@@ -1,0 +1,7 @@
+[Unit]
+Description=Factorio Headless Server
+
+[Service]
+Type=simple
+User=factorio
+ExecStart=/opt/factorio/bin/x64/factorio --rcon-port {{ pillar['factorio_rcon_port'] }} --rcon-password {{ pillar['factorio_rcon_password'] }} --start-server {{ pillar['factorio_savefile'] }} --server-settings {{ pillar['factorio_server_settings'] }}
